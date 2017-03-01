@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #e8be71;
+			}
+			div{
+				margin: 50px;
+			}
+			textarea{
+				width: 300px;
+				height: 160px;
+			}
+			input[type="submit"]{
+				width: 55px;
+				height: 30px;
+				background: #7599c8;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<form method="post" action="http://localhost:3000">
+				<textarea placeholder="请留言" name="messages"></textarea>
+				<br>
+				<input type="submit" value="提交">
+			</form>
+		</div>
+	</body>
+</html>

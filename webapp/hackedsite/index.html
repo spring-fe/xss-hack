@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #e8be71;
+			}
+			div{
+				margin: 50px;
+			}
+			input{
+				width: 200px;
+				height: 22px;
+				border-radius: 2px;
+				-webkit-border-radius: 2px;
+			}
+			label{
+				font-size: 12px;
+			}
+			#login{
+				margin-top: 5px;
+				width: 50px;
+				height: 30px;
+				background: #7599c8;
+				line-height: 20px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<label>用户名</label><br>
+			<input id="username" type="text">
+			<br>
+			<br>
+			<label>密码</label><br>
+			<input id="password" type="password">
+			<br>
+			<button id = "login">登录</button>
+		</div>
+		<script>
+			//window.location.href = "http://localhost:3000/liuyan.html";
+			var loginE = document.getElementById("login");
+			loginE.onclick = login;
+			function login() {
+				var user = document.getElementById("username");
+				var username = user.value;
+
+				var pwd = document.getElementById("password");;
+				var password = pwd.value;
+				console.log(2)
+
+				setCookie('username',username);
+				setCookie('password',password);
+
+				window.location.href='http://localhost:3000/hackedsite/comment.html';
+			}
+			function setCookie(name,value){
+				var Days = 30;
+				var exp = new Date();
+				exp.setTime(exp.getTime() + Days*24*60*60*1000);
+				document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+			}
+		</script>
+		<!--<input type="button" value="获取数据" onclick="GetData()" />
+		<div id="res">dsdf</div>
+		<a href="http://localhost:3000/liuyan.html">留言</a>
+		<script type="text/javascript">
+		function GetData(){
+	        var xhr=new XMLHttpRequest();
+	        xhr.open("GET","http://localhost:3000/",true);
+	        xhr.onreadystatechange=function(){
+	            if(xhr.readyState==4){
+	                if(xhr.status==200){
+	                    document.getElementById("res").innerHTML=xhr.responseText;
+	                }
+	            }
+	        }
+            xhr.send(null);
+        }
+		</script>-->
+	</body>
+</html>
